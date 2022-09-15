@@ -1,6 +1,5 @@
 from dataclasses import dataclass
 from typing import Dict, Type
-from typing import Final
 
 
 @dataclass
@@ -23,8 +22,8 @@ class InfoMessage:
 
 class Training:
     """Базовый класс тренировки."""
-    M_IN_KM: Final[int] = 1000
-    MIN_IN_H: Final[int] = 60
+    M_IN_KM: int = 1000
+    MIN_IN_H: int = 60
     LEN_STEP: float = 0.65
 
     def __init__(self,
@@ -63,8 +62,8 @@ class Training:
 
 class Running(Training):
     """Тренировка: бег."""
-    CALORIE_RATE_MULTIPLIER: Final[int] = 18
-    CALORIE_RATE_SHIFT: Final[int] = 20
+    CALORIE_RATE_MULTIPLIER: int = 18
+    CALORIE_RATE_SHIFT: int = 20
 
     def get_spent_calories(self) -> float:
         return (
@@ -80,8 +79,8 @@ class Running(Training):
 
 class SportsWalking(Training):
     """Тренировка: спортивная ходьба."""
-    CALORIE_RATE_MULTIPLIER: Final[float] = 0.035
-    CALORIE_RATE_SHIFT: Final[float] = 0.029
+    CALORIE_RATE_MULTIPLIER: float = 0.035
+    CALORIE_RATE_SHIFT: float = 0.029
 
     def __init__(self,
                  action: int,  # Кол-во действий
@@ -104,8 +103,8 @@ class SportsWalking(Training):
 class Swimming(Training):
     """Тренировка: плавание."""
     LEN_STEP: float = 1.38
-    CALORIE_RATE_MULTIPLIER: Final[float] = 1.1
-    CALORIE_RATE_SHIFT: Final[int] = 2
+    CALORIE_RATE_MULTIPLIER: float = 1.1
+    CALORIE_RATE_SHIFT: int = 2
 
     def __init__(self,
                  action: int,  # Кол-во действий
