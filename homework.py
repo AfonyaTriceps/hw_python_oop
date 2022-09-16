@@ -5,7 +5,7 @@
 """
 
 from dataclasses import dataclass
-from typing import Dict, Type
+from typing import Dict, Type, List
 
 
 @dataclass
@@ -314,7 +314,7 @@ TRAININGS: Dict[str, Type[Training]] = {
 }
 
 
-def read_package(workout_type: str, data: list[int]) -> Training:
+def read_package(workout_type: str, data: List[int]) -> Training:
     """Прочитать данные полученные от датчиков.
 
     Raises
